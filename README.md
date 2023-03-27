@@ -1,7 +1,7 @@
 
 # Project :Image-->Url
 
-## How To Run (Execute In Locahost)
+## How To Run (Execute In Localhost)
 
 * Run Backend : cd backend ->npm start
 * Run Frontend : cd frontend ->npm start
