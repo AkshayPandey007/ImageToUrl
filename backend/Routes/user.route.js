@@ -3,6 +3,7 @@ var bcrypt = require('bcryptjs');
 require("dotenv").config()
 const {userModel} = require("../Models/user.model")
 const userController = Router()
+const jwt = require("jsonwebtoken")
 
 userController.post("/signup" ,async (req,res)=>{
     try{
@@ -36,7 +37,8 @@ userController.post("/login" ,async (req, res) => {
         const isPasswordValid = await bcrypt.compare(password, user.password);
         if (!isPasswordValid)
           return res.json({ msg: "Incorrect Password", status: false });
-        return res.json({ status: true, user });
+          const token = jwt.sign({name:'bar'} , 'secret')
+        return res.json({ status: true, user ,token });
       } catch (err) {
         res.send("something went wrong")
       }

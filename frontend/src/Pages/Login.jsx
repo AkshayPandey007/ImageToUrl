@@ -6,10 +6,13 @@ import logo from "../assests/logo.png"
 import { Link, useNavigate } from 'react-router-dom';
 import styles from "../CSS/Login.module.css"
 import axios from "axios"
+import Upload from './Upload';
 
 const Login = () => {
     const navigate = useNavigate();
     const [values, setValues] = useState({username: "", password: ""});
+    const token = localStorage.getItem("token")
+    
 
 
     const toastCss = {
@@ -31,14 +34,20 @@ const Login = () => {
       if(handleValidation()==true)
       {
         const {  username, password } = values;
-      const {data} = await axios.post("https://backend-akshaypandey007.vercel.app/user/login", {username,password})
+      const {data} = await axios.post("http://localhost:8080/user/login", {username,password})
       
         if (data.status === false) {
           console.log(data.msg)
           toast.error(data.msg, toastCss);
         }
         else{
-          navigate("/upload")
+          localStorage.clear()
+          localStorage.setItem("token",data.token )
+        localStorage.setItem("name",data.user.username )
+        localStorage.setItem("email",data.user.email )
+        
+          navigate("/uploadImage")
+          // console.log(data.user.username)
         }
       }
       
@@ -60,6 +69,8 @@ const Login = () => {
         return true;
       };
   return (
+    <>
+   {token?<Upload/>:
     <div>
         <Navbar/>
 
@@ -97,6 +108,8 @@ const Login = () => {
       </div>
       <ToastContainer/>
     </div>
+    }
+    </>
   )
 }
 

@@ -1,0 +1,73 @@
+.mapBox{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    /* gap: 30px; */
+    width: 85%;
+    /* border: 1px solid red; */
+    margin: auto;
+    /* justify-content: space-between; */
+    gap: 30px;
+    margin-top: 30px;
+}
+
+
+
+.mapEachBox{
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset, rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+    /* border: 1px solid black; */
+    /* width: 45%; */
+   
+    height: 250px;
+}
+
+
+/* .mapLeftBox{
+    width: 10%;
+    border: 1px solid black;
+    height: 100%;
+} */
+
+
+.mapImg{
+    height: 100%;
+    width: 100%;
+    padding: 30px;
+    box-sizing: border-box;
+}
+
+
+@media  (min-width:80px) and (max-width:500px){
+    .mapBox{
+        grid-template-columns: repeat(2,1fr); 
+        width: 100%;
+    }
+
+
+    .mapEachBox{
+        height: 200px;
+    }
+
+
+    .mapImg{
+        padding: 15px;
+    }
+}
+
+
+
+@media  (min-width:501px) and (max-width:1500px){
+    .mapBox{
+        grid-template-columns: repeat(3,1fr); 
+        width: 85%;
+    }
+
+
+    .mapEachBox{
+        height: 220px;
+    }
+
+
+    .mapImg{
+        padding: 20px;
+    }
+}

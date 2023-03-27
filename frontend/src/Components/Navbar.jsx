@@ -18,7 +18,7 @@ const Navbar = () => {
         
       <Link to="/" className={styles.NavRLU}> <div>REGISTER</div> </Link> 
       <Link to="/login" className={styles.NavRLU}> <div>LOGIN</div> </Link> 
-       <Link className={styles.NavRLU}><div>UPLOAD</div> </Link> 
+       <Link to="/uploadImage" className={styles.NavRLU}><div>UPLOAD</div> </Link> 
 
 
         </div>

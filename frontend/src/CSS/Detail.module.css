@@ -1,0 +1,54 @@
+.DetailBox{
+    margin-top: 30px;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+
+
+.detailImg{
+   width: 30%;
+   border-radius: 50%; 
+   height: 350px;
+}
+
+
+.urlBox{
+    font-size: 18px;
+    font-weight: 500;
+    /* display: flex; */
+    margin-top: 30px;
+    width: 100%;
+    /* border: 1px solid red; */
+    height: 90px;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+
+/* .hrfUrl{
+    width: 90%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+} */
+
+
+
+@media  (min-width:80px) and (max-width:500px){
+    .detailImg{
+        height: 200px;
+        width: 50%;
+    }
+
+}
+
+
+
+@media  (min-width:500px) and (max-width:1500px)
+{
+    .detailImg{
+        height: 300px;
+        width: 50%;
+    }
+}
